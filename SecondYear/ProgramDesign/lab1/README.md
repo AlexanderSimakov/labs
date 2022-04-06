@@ -19,7 +19,7 @@ cd bin/
 Example:
 ``` bash
 cd bin/
-./out.o <file.txt> <Lorem> <ipsum> <dolor>
+./out.o file.txt Lorem ipsum dolor
 ```
 
 Output:
@@ -39,6 +39,3 @@ Game about stars and wars
 Date: 12.01.21
 Size: 3.2Gb
 ```
-
-
-
