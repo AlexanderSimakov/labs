@@ -24,9 +24,13 @@ void remove(StudentList* list);
 void remove_not_unique_names(StudentList* list);
 
 
-int main(){
+int main(int argc, char* argv[]){
     StudentList students;
-    init_list(&students);
+
+    if (argc == 2 && strcmp(argv[1], "--init") == 0)
+    {
+        init_list(&students);
+    }
 
     Menu menu;
     init_menu(&menu);
@@ -163,13 +167,11 @@ void is_there_student_with_name(StudentList* list)
 {
     ConsoleOut::show_title("Is there student with name");
 
-
     std::string name = ConsoleInp::get_name("\nName: ");
     if (list->is_there_students_with_name(name)) 
         ConsoleOut::show_info("YES");
     else 
         ConsoleOut::show_info("NO");
-
     ConsoleOut::pause();
 }
 
@@ -202,3 +204,4 @@ void remove_not_unique_names(StudentList* list)
     ConsoleOut::show_info("Students with no uniqe names was removed");
     ConsoleOut::pause();
 }
+
