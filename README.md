@@ -1,6 +1,3 @@
-# About
-
-
 # Structure
 ```bash
 .
