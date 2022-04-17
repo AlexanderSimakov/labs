@@ -54,7 +54,7 @@ int main()
 		cout << "Enter z: " << endl;
 		z = get_value();
 
-		cout << "\n\nChoise function: " << endl;
+		cout << "\n\nEnter a: " << endl;
 		a = get_value();
 
 		cout << "\n\n1)2x 2)x^2 3)x/3 : " << endl;
