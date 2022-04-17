@@ -19,7 +19,7 @@ double get_value()
         {
 			cin.clear();
 			cin.ignore(256, '\n');
-			cout << "<-- Íåïðàâèëüíûé ââîä -->\n" << endl;
+			cout << "<-- Wrong input -->\n" << endl;
 		}
 	}
 	return value;
@@ -38,7 +38,7 @@ double get_value_from_range(int min, int max)
 		}
 		else 
         {
-			cout << "Ââåäåííîå çíà÷åíèå äîëæíî ïðèíàäëåæàòü ïðîìåæóòêó [" << min << ", " << max << "]...\n" << endl;
+			cout << "Input number should be between [" << min << ", " << max << "]...\n" << endl;
 		}
 	}
 }
@@ -46,19 +46,15 @@ double get_value_from_range(int min, int max)
 
 int main()
 {
-	setlocale(LC_ALL, "Rus");
-
 	int user_choise;
 	double func, x = 0, z, y, a;
 
-
 	while (true) 
     {
-
-		cout << "Ââåäèòå z: " << endl;
+		cout << "Enter z: " << endl;
 		z = get_value();
 
-		cout << "\n\nÂâåäèòå à: " << endl;
+		cout << "\n\nChoise function: " << endl;
 		a = get_value();
 
 		cout << "\n\n1)2x 2)x^2 3)x/3 : " << endl;
@@ -67,7 +63,6 @@ int main()
 
 		if (z < 1) x = z * z;
 		else if (z >= 1) x = z + 1;
-
 
 		switch (user_choise)
 		{
@@ -79,9 +74,9 @@ int main()
 		}
 
 		y = a * log(1 + pow(x, 1. / 5)) + pow(cos(func + 1), 2);
-		cout << "\n\nÐåçóëüòàò: y = " << y << endl;
+		cout << "\n\ny = " << y << endl;
 
-		cout << "\nÆåëàåòå ïðîäîëæèòü?(1 - äà, 2 - íåò):" << endl;
+		cout << "\nDo you want to continue?(1 - yes, 2 - no):" << endl;
 		if (get_value_from_range(1, 2) == 2) 
         {
 			break;
