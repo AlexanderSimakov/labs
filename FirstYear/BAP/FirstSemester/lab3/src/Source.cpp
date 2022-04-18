@@ -3,105 +3,122 @@
 
 using namespace std;
 
-long double get_factorial(int num) {
+long double get_factorial(int num) 
+{
 	long double factorial = 1;
 
-	for (int i = 1; i <= num; i++) {
+	for (int i = 1; i <= num; i++) 
+    {
 		factorial *= i;
 	}
 
 	return factorial;
 }
 
-double get_value() {
+double get_value() 
+{
 	double value;
-	while (true) {
+	while (true) 
+    {
 		cout << "\n> ";
 		cin >> value;
 
-		if (cin.get() == '\n') {
+		if (cin.get() == '\n') 
+        {
 			break;
 		}
-		else {
+		else 
+        {
 			cin.clear();
 			cin.ignore(256, '\n');
-			cout << "<-- Неправильный ввод -->" << endl;
+			cout << "<-- Wrong input -->" << endl;
 		}
 	}
 	return value;
 }
 
-double get_value_more_than(double num) {
+double get_value_more_than(double num) 
+{
 	double value;
-	while (true) {
+	while (true) 
+    {
 		value = get_value();
-		if (value > num) {
+		if (value > num) 
+        {
 			return value;
 		}
-		else {
-			cout << "Введенное число должно быть больше " << num << " ..." << endl;
+		else 
+        {
+			cout << "Value should be more than " << num << " ..." << endl;
 		}
 	}
 }
 
-double get_value_less_than(double num) {
+double get_value_less_than(double num) 
+{
 	double value;
-	while (true) {
+	while (true) 
+    {
 		value = get_value();
-		if (value < num) {
+		if (value < num) 
+        {
 			return value;
 		}
-		else {
-			cout << "Введенное число должно быть меньше " << num << " ..." << endl;
+		else 
+        {
+			cout << "Value should be less then " << num << " ..." << endl;
 		}
 	}
 }
 
-double get_value_from_range(int min, int max) {
+double get_value_from_range(int min, int max) 
+{
 	double value;
 
-	while (true) {
+	while (true) 
+    {
 		value = get_value();
-		if (value >= min && value <= max) {
+		if (value >= min && value <= max) 
+        {
 			return value;
 		}
-		else {
-			cout << "Введенное значение должно принадлежать промежутку [" << min << ", " << max << "]..." << endl;
+		else 
+        {
+			cout << "Value should be between [" << min << ", " << max << "]..." << endl;
 		}
 
 	}
 }
 
 int main() {
-	setlocale(LC_ALL, "rus");
 	double a, b, h;
 	long double s, y, razn;
 	int n;
 
+	while (true) 
+    {
 
-
-	while (true) {
-
-		cout << "Х задается на промежутке [a, b] с шагом h" << endl;
-		cout << "Введите a: ";
+		cout << "Enter range [a, b] and step h" << endl;
+		cout << "Enter a: ";
 		a = get_value();
 
-		cout << "\nВведите b(b > a): ";
+		cout << "\nEnter b(b > a): ";
 		b = get_value_more_than(a);
 
-		cout << "\nВведите h(h < b-a): ";
+		cout << "\nEnter h(h < b-a): ";
 		h = get_value_less_than(b - a);
 
-		cout << "\nВведите n: ";
+		cout << "\nEnter n: ";
 		n = get_value();
 
 		cout << endl;
 
-
-		for (a; a <= b; a += h) {
+		for (; a <= b; a += h) 
+        {
 			s = 0;
 
-			for (int k = 0; k <= n; k++) {
+			for (int k = 0; k <= n; k++) 
+            {
 				s += pow(-1, k) * (pow(a, 2 * k + 1)) / get_factorial(2 * k + 1);
 			}
 			y = sin(a);
@@ -111,12 +128,13 @@ int main() {
 
 		}
 
-
-		cout << "\nЖелаете продолжить?(1 - да, 2 - нет):";
-		if (get_value_from_range(1, 2) == 2) {
+		cout << "\nDo you want to continue?(1 - Yes, 2 - No):";
+		if (get_value_from_range(1, 2) == 2) 
+        {
 			break;
 		}
-		else {
+		else 
+        {
 			cout << "\n------------------------------" << endl;
 			cout << "------------------------------\n" << endl;
 		}
@@ -124,3 +142,4 @@ int main() {
 
 	return 0;
 }
+
